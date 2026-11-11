@@ -1,0 +1,582 @@
+{
+	"_version": "1.7.0",
+	"start_url": "start.html",
+	"sap.app": {
+		"id": "zrtl_mims_ovp2.zrtl_mims_ovp2",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{app_title}}",
+		"description": "{{app_description}}",
+		"dataSources": {
+			"ZUI_RTL_MYSTOREOVP": {
+				"uri": "/sap/opu/odata/sap/ZUI_RTL_MYSTOREOVP/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"annotations": [
+						"ZUI_RTL_MYSTOREOVP_VAN"
+					],
+					"localUri": "localService/ZUI_RTL_MYSTOREOVP/metadata.xml"
+				}
+			},
+			"ZUI_RTL_MYSTOREOVP_VAN": {
+				"uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZUI_RTL_MYSTOREOVP_VAN',Version='0001')/$value/",
+				"type": "ODataAnnotation",
+				"settings": {
+					"localUri": "localService/ZUI_RTL_MYSTOREOVP/ZUI_RTL_MYSTOREOVP_VAN.xml"
+				}
+			}
+		},
+		"sourceTemplate": {
+			"id": "OVP.smartovptemplate",
+			"version": "1.41.1"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"dependencies": {
+			"minUI5Version": "1.65.6",
+			"libs": {
+				"sap.ovp": {}
+			}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"@i18n": {
+				"preload": true,
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"ZUI_RTL_MYSTOREOVP": {
+				"dataSource": "ZUI_RTL_MYSTOREOVP",
+				"settings": {
+					"defaultCountMode": "Inline"
+				}
+			}
+		},
+		"extends": {
+			"extensions": {}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		}
+	},
+	"sap.card": {
+		"type": "Table",
+		"data": {
+			"json": [
+				{
+					"product": "DVD player",
+					"salesOrder": "5000010050",
+					"customerName": "Robert Brown Entertainment",
+					"netAmount": "2K USD",
+					"status": "Delivered",
+					"statusState": "Success",
+					"deliveryProgress": 100
+				},
+				{
+					"product": "Astro Laptop 1516",
+					"salesOrder": "5000010051",
+					"customerName": "Entertainment Argentina",
+					"netAmount": "127k USD",
+					"status": "Canceled",
+					"statusState": "Error",
+					"deliveryProgress": 0
+				},
+				{
+					"product": "Astro Phone 6",
+					"salesOrder": "5000010052",
+					"customerName": "Brazil Technologies",
+					"netAmount": "8K USD",
+					"status": "In Progress",
+					"statusState": "Warning",
+					"deliveryProgress": 33
+				},
+				{
+					"product": "Beam Breaker B-1",
+					"salesOrder": "5000010053",
+					"customerName": "Quimica Madrilenos",
+					"netAmount": "25K USD",
+					"status": "Delivered",
+					"statusState": "Success",
+					"deliveryProgress": 100
+				},
+				{
+					"product": "Beam Breaker B-2",
+					"salesOrder": "5000010054",
+					"customerName": "Development Para O Governo",
+					"netAmount": "7K USD",
+					"status": "Delivered",
+					"statusState": "Success",
+					"deliveryProgress": 100
+				},
+				{
+					"product": "Beam Breaker B-3",
+					"salesOrder": "5000010050",
+					"customerName": "Robert Brown Entertainment",
+					"netAmount": "2K USD",
+					"status": "Delivered",
+					"statusState": "Success",
+					"deliveryProgress": 100
+				},
+				{
+					"product": "Benda Laptop 1408",
+					"salesOrder": "5000010051",
+					"customerName": "Entertainment Argentina",
+					"netAmount": "127k USD",
+					"status": "Canceled",
+					"statusState": "Error",
+					"deliveryProgress": 0
+				},
+				{
+					"product": "Bending Screen 21HD",
+					"salesOrder": "5000010052",
+					"customerName": "Brazil Technologies",
+					"netAmount": "8K USD",
+					"status": "In Progress",
+					"statusState": "Warning",
+					"deliveryProgress": 27
+				},
+				{
+					"product": "Blaster Extreme",
+					"salesOrder": "5000010052",
+					"customerName": "Brazil Technologies",
+					"netAmount": "8K USD",
+					"status": "In Progress",
+					"statusState": "Warning",
+					"deliveryProgress": 51
+				}
+			]
+		},
+		"header": {
+			"title": "Sales Orders for Key Accounts",
+			"subTitle": "Today"
+		},
+		"content": {
+			"maxItems": 15,
+			"row": {
+				"columns": [
+					{
+						"title": "Product",
+						"value": "{product}",
+						"additionalText": "{salesOrder}",
+						"identifier": true
+					},
+					{
+						"title": "Customer",
+						"value": "{customerName}"
+					},
+					{
+						"title": "Net Amount",
+						"value": "{netAmount}",
+						"hAlign": "End"
+					},
+					{
+						"title": "Status",
+						"value": "{status}",
+						"state": "{statusState}"
+					},
+					{
+						"title": "Delivery Progress",
+						"progressIndicator": {
+							"percent": "{deliveryProgress}",
+							"text": "{= format.percent(${deliveryProgress} / 100)}",
+							"state": "{statusState}"
+						}
+					}
+				]
+			}
+		}
+	},
+	"sap.ovp": {
+		"globalFilterModel": "ZUI_RTL_MYSTOREOVP",
+		"globalFilterEntityType": "",
+		"containerLayout": "fixed",
+		"enableLiveFilter": false,
+		"considerAnalyticalParameters": false,
+		"showDateInRelativeFormat": false,
+		"refreshIntervalInMinutes": 15,
+		"cards": {
+			"AcardMyStore": {
+				"model": "ZUI_RTL_MYSTOREOVP",
+				"template": "sap.ovp.cards.list",
+				"settings": {
+					"title": "{{card00_title}}",
+					"entitySet": "AssignedStore",
+					"defaultSpan": {
+						"cols": 1,
+						"rows": 1,
+						"showOnlyHeader": false
+					}
+				}
+			},
+			"ILogoCard": {
+				"model": "ZUI_RTL_MYSTOREOVP",
+				"template": "sap.ovp.cards.linklist",
+				"settings": {
+					"title": "{{card01_title}}",
+					"listFlavor": "standard",
+					"listtype": "condensed",
+					"defaultSpan": {
+						"cols": 1,
+						"rows": 18,
+						"showOnlyHeader": false
+					},
+					"staticContent": [
+						{
+							"title": "{{card02_title}}",
+							"imageUri": "sap-icon://Fiori2/F0021",
+							"imageAltText": "{{card02_title}}",
+							"semanticObject": "zmat_doc",
+							"action": "display"
+						},
+						{
+							"title": "{{card03_title}}",
+							"imageUri": "sap-icon://Fiori2/F0194",
+							"imageAltText": "{{card03_title}}",
+							"semanticObject": "Material",
+							"action": "display"
+						},
+						{
+							"title": "{{card04_title}}",
+							"imageUri": "sap-icon://shipping-status",
+							"imageAltText": "{{card04_title}}",
+							"semanticObject": "ZRT_EXPRCV_WHDC",
+							"action": "display"
+						},
+						{
+							"title": "{{card05_title}}",
+							"imageUri": "sap-icon://supplier",
+							"imageAltText": "{{card05_title}}",
+							"semanticObject": "ZRTL_EXPRCV_SV",
+							"action": "display"
+						}
+					]
+				}
+			},
+			"LDummyCard": {
+				"model": "ZUI_RTL_MYSTOREOVP",
+				"template": "sap.ovp.cards.list",
+				"settings": {
+					"title": "{{card06_title}}",
+					"entitySet": "Dummy",
+					"defaultSpan": {
+						"cols": 1,
+						"rows": 1,
+						"showOnlyHeader": false
+					}
+				}
+			},
+			"MDummyCard": {
+				"model": "ZUI_RTL_MYSTOREOVP",
+				"template": "sap.ovp.cards.list",
+				"settings": {
+					"title": "{{card06_title}}",
+					"entitySet": "Dummy",
+					"defaultSpan": {
+						"cols": 1,
+						"rows": 1,
+						"showOnlyHeader": false
+					}
+				}
+			},
+			"PDummyCard": {
+				"model": "ZUI_RTL_MYSTOREOVP",
+				"template": "sap.ovp.cards.list",
+				"settings": {
+					"title": "{{card06_title}}",
+					"entitySet": "Dummy",
+					"defaultSpan": {
+						"cols": 1,
+						"rows": 1,
+						"showOnlyHeader": false
+					}
+				}
+			},
+			"BcardUpcomingDeliveries": {
+				"model": "ZUI_RTL_MYSTOREOVP",
+				"template": "sap.ovp.cards.table",
+				"settings": {
+					"title": "{{card07_title}}",
+					"listFlavor": "standard",
+					"listType": "condensed",
+					"addODataSelect": true,
+					"entitySet": "TodayCtn2",
+					"defaultSpan": {
+						"cols": 1,
+						"rows": 5,
+						"showOnlyHeader": false
+					},
+					"annotationPath": "com.sap.vocabularies.UI.v1.LineItem",
+					"selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#ExpDcdel",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+				}
+			},
+			"JcardExpectedTransfers": {
+				"model": "ZUI_RTL_MYSTOREOVP",
+				"template": "sap.ovp.cards.table",
+				"settings": {
+					"title": "{{card08_title}}",
+					"listFlavor": "standard",
+					"listType": "condensed",
+					"addODataSelect": true,
+					"entitySet": "TrsfExptd",
+					"defaultSpan": {
+						"cols": 1,
+						"rows": 5,
+						"showOnlyHeader": false
+					},
+					"annotationPath": "com.sap.vocabularies.UI.v1.LineItem",
+					"selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#ExpTransf",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+				}
+			},
+			"NcardExpectedTransfers": {
+				"model": "ZUI_RTL_MYSTOREOVP",
+				"template": "sap.ovp.cards.table",
+				"settings": {
+					"title": "{{card091_title}}",
+					"listFlavor": "standard",
+					"listType": "condensed",
+					"addODataSelect": true,
+					"entitySet": "VendTrsf",
+					"defaultSpan": {
+						"cols": 1,
+						"rows": 5,
+						"showOnlyHeader": false
+					},
+					"annotationPath": "com.sap.vocabularies.UI.v1.LineItem",
+					"selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#ExpVend",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+				}
+			},
+			"FcardWeeklyDeliveries": {
+				"model": "ZUI_RTL_MYSTOREOVP",
+				"template": "sap.ovp.cards.table",
+				"settings": {
+					"title": "{{card21_title}}",
+					"listFlavor": "standard",
+					"listType": "condensed",
+					"addODataSelect": true,
+					"entitySet": "WeekDel",
+					"defaultSpan": {
+						"cols": 1,
+						"rows": 35,
+						"showOnlyHeader": false
+					},
+					"annotationPath": "com.sap.vocabularies.UI.v1.LineItem",
+					"selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#UpcommingDel",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+				}
+			},
+			"DcardCartonsProcessing": {
+				"model": "ZUI_RTL_MYSTOREOVP",
+				"template": "sap.ovp.cards.table",
+				"settings": {
+					"title": "{{card22_title}}",
+					"listFlavor": "standard",
+					"listType": "condensed",
+					"sortBy": "RecoveryStatusText",
+					"sortOrder": "Ascending",
+					"addODataSelect": true,
+					"entitySet": "CartonProcess",
+					"defaultSpan": {
+						"cols": 1,
+						"rows": 5,
+						"showOnlyHeader": false
+					},
+					"annotationPath": "com.sap.vocabularies.UI.v1.LineItem",
+					"selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#CartonProcess",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+				}
+			},
+			"HCardInTransitTenDays": {
+				"model": "ZUI_RTL_MYSTOREOVP",
+				"template": "sap.ovp.cards.table",
+				"settings": {
+					"title": "{{card10_title}}",
+					"listFlavor": "standard",
+					"listType": "condensed",
+					"addODataSelect": true,
+					"entitySet": "TenDaysTransit",
+					"defaultSpan": {
+						"cols": 1,
+						"rows": 5,
+						"showOnlyHeader": false
+					},
+					"annotationPath": "com.sap.vocabularies.UI.v1.LineItem",
+					"selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#OvrdueDel",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+				}
+			},
+			"CcardTodayDCReceipts": {
+				"model": "ZUI_RTL_MYSTOREOVP",
+				"template": "sap.ovp.cards.table",
+				"settings": {
+					"title": "{{card11_title}}",
+					"entitySet": "DC_Carton2",
+					"listType": "condensed",
+					"listFlavor": "standard",
+					"bEnableStableColors": true,
+					"defaultSpan": {
+						"rows": 5,
+						"cols": 1,
+						"showOnlyHeader": false
+					},
+					"selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#DCReceipts"
+				}
+			},
+			"GcardTransferIn": {
+				"model": "ZUI_RTL_MYSTOREOVP",
+				"template": "sap.ovp.cards.table",
+				"settings": {
+					"title": "{{card12_title}}",
+					"listFlavor": "standard",
+					"listType": "extended",
+					"addODataSelect": true,
+					"entitySet": "TransferIn",
+					"sortBy": "ProcessingState",
+					"sortOrder": "Descending",
+					"annotationPath": "com.sap.vocabularies.UI.v1.LineItem",
+					"selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#TransferFilter",
+					"defaultSpan": {
+						"cols": 1,
+						"rows": 6,
+						"showOnlyHeader": false
+					}
+				}
+			},
+			"KcardTransferOut": {
+				"model": "ZUI_RTL_MYSTOREOVP",
+				"template": "sap.ovp.cards.table",
+				"settings": {
+					"title": "{{card13_title}}",
+					"listFlavor": "standard",
+					"listType": "extended",
+					"addODataSelect": true,
+					"entitySet": "Transfer",
+					"annotationPath": "com.sap.vocabularies.UI.v1.LineItem",
+					"selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#TrsfOut",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+					"defaultSpan": {
+						"cols": 1,
+						"rows": 6,
+						"showOnlyHeader": false
+					}
+				}
+			},
+			"OcardAdjustments": {
+				"model": "ZUI_RTL_MYSTOREOVP",
+				"template": "sap.ovp.cards.table",
+				"settings": {
+					"title": "{{card14_title}}",
+					"listFlavor": "standard",
+					"listType": "extended",
+					"addODataSelect": true,
+					"entitySet": "AdjToday",
+					"annotationPath": "com.sap.vocabularies.UI.v1.LineItem",
+					"selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#AdjNormal",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+					"defaultSpan": {
+						"cols": 1,
+						"rows": 6,
+						"showOnlyHeader": false
+					}
+				}
+			},
+			"EcardRetailStoreQuickLinks": {
+				"model": "ZUI_RTL_MYSTOREOVP",
+				"template": "sap.ovp.cards.linklist",
+				"settings": {
+					"title": "{{card15_title}}",
+					"listFlavor": "standard",
+					"listtype": "condensed",
+					"defaultSpan": {
+						"rows": 10,
+						"cols": 1,
+						"showOnlyHeader": false
+					},
+					"staticContent": [
+						{
+							"title": "{{card16_title}}",
+							"imageUri": "sap-icon://Fiori8/F1248",
+							"imageAltText": "{{card16_title}}",
+							"semanticObject": "ZPROD_REC_CONS",
+							"action": "receive"
+						},
+						{
+							"title": "{{card23_title}}",
+							"imageUri": "sap-icon://Fiori8/F1248",
+							"imageAltText": "{{card23_title}}",
+							"semanticObject": "ZREC_PROD_EXT2",
+							"action": "receive"
+						},
+						{
+							"title": "{{card24_title}}",
+							"imageUri": "sap-icon://Fiori6/F0753",
+							"imageAltText": "Transfer Out",
+							"semanticObject": "zprod_xfer2",
+							"action": "receive"
+						},
+						{
+							"title": "{{card25_title}}",
+							"imageUri": "sap-icon://Fiori4/F0586",
+							"imageAltText": "{{card25_title}}",
+							"semanticObject": "ZRT_ADJMASSSTK",
+							"action": "adjustmassstock"
+						},
+						{
+							"title": "{{card17_title}}",
+							"imageUri": "sap-icon://Fiori3/F0535",
+							"imageAltText": "{{card17_title}}",
+							"semanticObject": "ZRT_PROD_LKPS1",
+							"action": "lookup"
+						},
+						{
+							"title": "{{card18_title}}",
+							"imageUri": "sap-icon://print",
+							"imageAltText": "{{card18_title}}",
+							"semanticObject": "Article",
+							"action": "printLabels"
+						},
+						{
+							"title": "{{card19_title}}",
+							"imageUri": "sap-icon://print",
+							"imageAltText": "{{card19_title}}",
+							"semanticObject": "zpdftc52",
+							"action": "display"
+						},
+						{
+							"title": "{{card20_title}}",
+							"imageUri": "sap-icon://retail-store",
+							"imageAltText": "{{card20_title}}",
+							"semanticObject": "Store",
+							"action": "assignUser"
+						}
+					]
+				}
+			}
+		}
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/zrtl_mims_ovp2",
+		"_version": "1.1.0"
+	}
+}

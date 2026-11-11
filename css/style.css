@@ -1,0 +1,12 @@
+/*
+ * Vertical scrolling is intentionally restricted to the
+ * "Upcoming Deliveries" OVP card (card id: FcardWeeklyDeliveries).
+ * Other OVP cards are not affected.
+ */
+[id*="FcardWeeklyDeliveries"].sapOvpCard .sapOvpCardContentContainer,
+[id*="FcardWeeklyDeliveries"] .sapOvpCardContentContainer,
+[id*="FcardWeeklyDeliveries"].sapOvpCard .sapOvpCardContent,
+[id*="FcardWeeklyDeliveries"] .sapOvpCardContent {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+}

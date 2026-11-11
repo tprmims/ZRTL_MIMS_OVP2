@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:Reference
+		Uri="https://webidecp-e4xd895gah.dispatcher.us2.hana.ondemand.com/destinations/DG2-2021_client_200/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='FMSCLNT200')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-e4xd895gah.dispatcher.us2.hana.ondemand.com/destinations/DG2-2021_client_200/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='FMSCLNT200')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-e4xd895gah.dispatcher.us2.hana.ondemand.com/destinations/DG2-2021_client_200/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='FMSCLNT200')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/><edmx:Include Namespace="Org.OData.Capabilities.V1"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-e4xd895gah.dispatcher.us2.hana.ondemand.com/destinations/DG2-2021_client_200/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='FMSCLNT200')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/><edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="CodeList"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-e4xd895gah.dispatcher.us2.hana.ondemand.com/destinations/DG2-2021_client_200/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='FMSCLNT200')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-e4xd895gah.dispatcher.us2.hana.ondemand.com/destinations/DG2-2021_client_200/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='FMSCLNT200')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-e4xd895gah.dispatcher.us2.hana.ondemand.com/destinations/DG2-2021_client_200/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='FMSCLNT200')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-e4xd895gah.dispatcher.us2.hana.ondemand.com/destinations/DG2-2021_client_200/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='FMSCLNT200')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-e4xd895gah.dispatcher.us2.hana.ondemand.com/destinations/DG2-2021_client_200/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='FMSCLNT200')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-e4xd895gah.dispatcher.us2.hana.ondemand.com/destinations/DG2-2021_client_200/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='FMSCLNT200')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-e4xd895gah.dispatcher.us2.hana.ondemand.com/destinations/DG2-2021_client_200/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='FMSCLNT200')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="cds_zui_rtl_mystoreovp" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm"><Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+			<EntityType Name="AssignedStoreType" sap:content-version="1">
+				<Key><PropertyRef Name="Store"/></Key><Property Name="Store" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Plant"/><Property Name="StoreName" Type="Edm.String" MaxLength="30" sap:label="Store Name"/></EntityType>
+			<EntityType Name="AdjTodayType" sap:semantics="aggregate" sap:label="Adjustments today" sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NumberOfHandlingUnits" Type="Edm.Int32" sap:aggregation-role="measure" sap:filterable="false"/><Property Name="ItemCount" Type="Edm.Decimal" Precision="15" Scale="0" sap:aggregation-role="measure" sap:filterable="false"/><Property Name="CompletedType" Type="Edm.String" MaxLength="17" sap:aggregation-role="dimension"/><Property Name="StockadjustmentstatusCode" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension"
+					sap:text="StockadjustmentstatusText"/><Property Name="UnitOfMeasure" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:label="Base Unit of Measure"
+					sap:semantics="unit-of-measure"/><Property Name="StockadjustmentstatusText" Type="Edm.String" MaxLength="60" sap:label="Short Description"
+					sap:quickinfo="Short Text for Fixed Values"/></EntityType>
+			<EntityType Name="CartonProcessType" sap:semantics="aggregate" sap:label="DC Carton In Process" sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NumberOfHandlingUnits" Type="Edm.Int32" sap:aggregation-role="measure" sap:filterable="false"/><Property Name="ReceivedQty" Type="Edm.Decimal" Precision="15" Scale="0" sap:aggregation-role="measure" sap:filterable="false"/><Property Name="recovery_type" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension" sap:display-format="NonNegative"
+					sap:text="RecoveryStatusText"/><Property Name="RecoveryStatusText" Type="Edm.String" MaxLength="60" sap:label="Short Description"
+					sap:quickinfo="Short Text for Fixed Values"/><Property Name="recovery_status" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:label="Recovery Status" sap:quickinfo="RECOVERY STATUS"/></EntityType>
+			<EntityType Name="TenDaysTransitType" sap:semantics="aggregate" sap:label="DC Carton In Process" sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NumberOfHandlingUnits" Type="Edm.Int32" sap:aggregation-role="measure" sap:filterable="false"/><Property Name="ItemCount" Type="Edm.Decimal" Precision="15" Scale="3" sap:aggregation-role="measure" sap:unit="UnitOfMeasure"
+					sap:filterable="false"/><Property Name="ItemCount1" Type="Edm.Int32" sap:aggregation-role="measure" sap:filterable="false"/><Property Name="UnitOfMeasure" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:label="Handling unit UoM"
+					sap:quickinfo="Base Unit of Measure of the Quantity to be Packed (VEMNG)" sap:semantics="unit-of-measure"/><Property Name="SupplierName" Type="Edm.String" MaxLength="30" sap:aggregation-role="dimension" sap:label="Name 2"/><Property Name="Supplier" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:label="Supplier" sap:quickinfo="Vendor's account number"/><Property Name="CartonStatus" Type="Edm.String" MaxLength="1" sap:aggregation-role="dimension"/><Property Name="CartonType" Type="Edm.String" MaxLength="13" sap:aggregation-role="dimension"/></EntityType>
+			<EntityType Name="DC_CartonType" sap:semantics="aggregate" sap:label="Delivery from DC today" sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CartonID" Type="Edm.String" MaxLength="20" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:label="HU identification 2" sap:quickinfo="Handling Unit's 2nd External Identification"/><Property Name="StoreID" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="Plant"/><Property Name="NumberOfHandlingUnits" Type="Edm.Int32" sap:aggregation-role="measure" sap:label="Today DC Deliveries"
+					sap:filterable="false"/><Property Name="DeliveryStatus" Type="Edm.String" MaxLength="20" sap:aggregation-role="dimension" sap:label="Carton Receiving Status"/><Property Name="UnitOfMeasure" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:label="Handling unit UoM"
+					sap:quickinfo="Base Unit of Measure of the Quantity to be Packed (VEMNG)" sap:semantics="unit-of-measure"/></EntityType>
+			<EntityType Name="TrsfExptdType" sap:semantics="aggregate" sap:label="Transfer Today consumption" sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ProductTransferId" Type="Edm.Guid" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="Transfer ID"
+					sap:quickinfo="Product Transfer ID"/><Property Name="FromName" Type="Edm.String" MaxLength="30" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:label="30 Characters" sap:heading=""/><Property Name="Cartons" Type="Edm.Int32" sap:aggregation-role="measure" sap:filterable="false"/><Property Name="ItemCount" Type="Edm.Decimal" Precision="18" Scale="0" sap:aggregation-role="measure" sap:filterable="false"/><Property Name="UnitOfMeasure" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:label="Base Unit of Measure"
+					sap:semantics="unit-of-measure"/><Property Name="ProcessingState1" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:label="Processing Status" sap:quickinfo="Transfer Processing Status"/></EntityType>
+			<EntityType Name="DlvTodayType" sap:semantics="aggregate" sap:label="OVP Today Consuption View" sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Delivery" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:label="Delivery"/><Property Name="ReceivingStore" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:label="Receiving Plant" sap:quickinfo="Receiving Plant for Deliveries"/><Property Name="CartonID" Type="Edm.String" MaxLength="20" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:label="HU identification 2" sap:quickinfo="Handling Unit's 2nd External Identification"/><Property Name="DeliveryDate" Type="Edm.DateTime" Precision="0" sap:aggregation-role="dimension" sap:display-format="Date"
+					sap:label="Delivery Date"/><Property Name="DeliveryStatus" Type="Edm.String" MaxLength="1" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:label="Goods Movement Sts" sap:quickinfo="Goods Movement Status (All Items)"/><Property Name="GRDate" Type="Edm.DateTime" Precision="0" sap:aggregation-role="dimension" sap:display-format="Date"
+					sap:label="Act. Gds Mvmnt Date" sap:quickinfo="Actual Goods Movement Date"/><Property Name="HandlingUnitStatus" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:label="HU status" sap:quickinfo="Handling unit status"/><Property Name="NumberOfHandlingUnits" Type="Edm.Int32" sap:aggregation-role="measure" sap:label="Number of Goods Receipts"
+					sap:filterable="false"/><Property Name="DeliveryDateOffsetInDays" Type="Edm.Int32" sap:aggregation-role="dimension"/></EntityType>
+			<EntityType Name="TodayCtnType" sap:semantics="aggregate" sap:label="RTST carton receiving from DC" sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Cartons" Type="Edm.Int32" sap:aggregation-role="measure" sap:filterable="false"/><Property Name="CartonType" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension"/><Property Name="FromName" Type="Edm.String" MaxLength="30" sap:aggregation-role="dimension" sap:label="Name 2"/><Property Name="ItemCount" Type="Edm.Decimal" Precision="15" Scale="3" sap:aggregation-role="dimension" sap:unit="UnitOfMeasure"/><Property Name="UnitOfMeasure" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:label="Handling unit UoM"
+					sap:quickinfo="Base Unit of Measure of the Quantity to be Packed (VEMNG)" sap:semantics="unit-of-measure"/></EntityType>
+			<EntityType Name="TodayCtn2Type" sap:semantics="aggregate" sap:label="RTST carton receiving from DC" sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Cartons" Type="Edm.Int32" sap:aggregation-role="measure" sap:filterable="false"/><Property Name="FromName" Type="Edm.String" MaxLength="15"/><Property Name="Supplier" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:text="FromName" sap:label="Supplier" sap:quickinfo="Vendor's account number"/><Property Name="ItemCount" Type="Edm.Decimal" Precision="15" Scale="3" sap:aggregation-role="measure" sap:unit="UnitOfMeasure"
+					sap:filterable="false"/><Property Name="ItemCount1" Type="Edm.Int32" sap:aggregation-role="measure" sap:filterable="false"/><Property Name="UnitOfMeasure" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:label="Handling unit UoM"
+					sap:quickinfo="Base Unit of Measure of the Quantity to be Packed (VEMNG)" sap:semantics="unit-of-measure"/><Property Name="CartonType" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension"/><Property Name="CartonStatus" Type="Edm.String" MaxLength="1" sap:aggregation-role="dimension"/></EntityType>
+			<EntityType Name="DC_Carton2Type" sap:semantics="aggregate" sap:label="Carton Receipts from DC today" sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NumberOfHandlingUnits" Type="Edm.Int32" sap:aggregation-role="measure" sap:filterable="false"/><Property Name="ItemCount" Type="Edm.Decimal" Precision="15" Scale="0" sap:aggregation-role="measure" sap:filterable="false"/><Property Name="SupplierName" Type="Edm.String" MaxLength="15"/><Property Name="Supplier" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:text="SupplierName" sap:label="Supplier" sap:quickinfo="Vendor's account number"/><Property Name="CartonStatus" Type="Edm.String" MaxLength="1" sap:aggregation-role="dimension"/></EntityType>
+			<EntityType Name="TransferInType" sap:semantics="aggregate" sap:label="Transfer in from Store and Vendor" sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/><Property Name="InternalHUID" Type="Edm.String" MaxLength="14" sap:aggregation-role="dimension"/><Property Name="HandlingUnitExternalID" Type="Edm.String" MaxLength="20" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:label="HU identification 2" sap:quickinfo="Handling Unit's 2nd External Identification"/><Property Name="Store" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="Plant"/><Property Name="NumberOfHandlingUnits" Type="Edm.Int32" sap:aggregation-role="measure" sap:filterable="false"/><Property Name="ItemCount" Type="Edm.Decimal" Precision="15" Scale="0" sap:aggregation-role="measure" sap:filterable="false"/><Property Name="UnitOfMeasure" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:label="Base Unit of Measure"
+					sap:semantics="unit-of-measure"/><Property Name="ProcessingState" Type="Edm.String" MaxLength="1" sap:aggregation-role="dimension" sap:display-format="NonNegative"
+					sap:text="ProcessingStateText"/><Property Name="ProcessingStateText" Type="Edm.String" MaxLength="60" sap:label="Short Description"
+					sap:quickinfo="Short Text for Fixed Values"/><Property Name="DeliveryDocument" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:label="Delivery"/><Property Name="DeliveryDate" Type="Edm.DateTime" Precision="0" sap:aggregation-role="dimension" sap:display-format="Date"
+					sap:label="Delivery Date"/><Property Name="DeliveryDateOffsetInDays" Type="Edm.Int32" sap:aggregation-role="dimension"/><Property Name="StoreReceivingDocGRStatus" Type="Edm.String" MaxLength="1" sap:aggregation-role="dimension" sap:display-format="NonNegative"/></EntityType>
+			<EntityType Name="TransferIn_1Type" sap:semantics="aggregate" sap:label="Transfer in from Store and Vendor" sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/><Property Name="InternalHUID" Type="Edm.String" MaxLength="14" sap:aggregation-role="dimension"/><Property Name="HandlingUnitExternalID" Type="Edm.String" MaxLength="20" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:label="HU identification 2" sap:quickinfo="Handling Unit's 2nd External Identification"/><Property Name="CartonStatus" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension"/><Property Name="Store" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="Plant"/><Property Name="NumberOfHandlingUnits" Type="Edm.Int32" sap:aggregation-role="measure" sap:filterable="false"/><Property Name="ItemCount" Type="Edm.Decimal" Precision="15" Scale="0" sap:aggregation-role="measure" sap:filterable="false"/><Property Name="UnitOfMeasure" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:label="Base Unit of Measure"
+					sap:semantics="unit-of-measure"/><Property Name="ProcessingState" Type="Edm.String" MaxLength="1" sap:aggregation-role="dimension" sap:display-format="NonNegative"/><Property Name="DeliveryDocument" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:label="Delivery"/><Property Name="DeliveryDate" Type="Edm.DateTime" Precision="0" sap:aggregation-role="dimension" sap:display-format="Date"
+					sap:label="Delivery Date"/></EntityType>
+			<EntityType Name="TransferType" sap:semantics="aggregate" sap:label="Transfer Today consumption" sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ProcessingState" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension"/><Property Name="DelStore" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="Plant"/><Property Name="NumberOfHandlingUnits" Type="Edm.Int32" sap:aggregation-role="measure" sap:filterable="false"/><Property Name="ItemCount" Type="Edm.Decimal" Precision="18" Scale="0" sap:aggregation-role="measure" sap:filterable="false"/><Property Name="UnitOfMeasure" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:label="Base Unit of Measure"
+					sap:semantics="unit-of-measure"/></EntityType>
+			<EntityType Name="WeekDelType" sap:semantics="aggregate" sap:label="Carton Receipts from DC For this week" sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NumberOfHandlingUnits" Type="Edm.Int32" sap:aggregation-role="measure" sap:filterable="false"/><Property Name="ItemCount" Type="Edm.Decimal" Precision="15" Scale="3" sap:aggregation-role="measure" sap:unit="UnitOfMeasure"
+					sap:filterable="false"/><Property Name="ItemCount1" Type="Edm.Int32" sap:aggregation-role="measure" sap:filterable="false"/><Property Name="UnitOfMeasure" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:label="Handling unit UoM"
+					sap:quickinfo="Base Unit of Measure of the Quantity to be Packed (VEMNG)" sap:semantics="unit-of-measure"/><Property Name="ExpectedDeliveryDate" Type="Edm.DateTime" Precision="0" sap:aggregation-role="dimension" sap:display-format="Date"/><Property Name="CartonStatus" Type="Edm.String" MaxLength="1" sap:aggregation-role="dimension"/><Property Name="CartonID" Type="Edm.String" MaxLength="20" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:label="HU identification 2" sap:quickinfo="Handling Unit's 2nd External Identification"/></EntityType>
+			<EntityType Name="VendTrsfType" sap:semantics="aggregate" sap:label="Transfer from Vendor" sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/><Property Name="InternalHUID" Type="Edm.String" MaxLength="14" sap:aggregation-role="dimension"/><Property Name="FromName" Type="Edm.String" MaxLength="6" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:label="Reserve" sap:quickinfo="Character field of length 6"/><Property Name="Cartons" Type="Edm.Int32" sap:aggregation-role="measure" sap:filterable="false"/><Property Name="ItemCount" Type="Edm.Decimal" Precision="15" Scale="0" sap:aggregation-role="measure" sap:filterable="false"/><Property Name="UnitOfMeasure" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:label="Base Unit of Measure"
+					sap:semantics="unit-of-measure"/><Property Name="IsTransferExpected" Type="Edm.String" MaxLength="1" sap:aggregation-role="dimension"/></EntityType>
+			<EntityType Name="CompletedTodayType" sap:label="Completed today OVP Card" sap:content-version="1">
+				<Key><PropertyRef Name="Store"/></Key><Property Name="Store" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Plant"/><Property Name="NumberOfHandlingUnits" Type="Edm.Int32"/><Property Name="CompletedType" Type="Edm.String" MaxLength="32"/></EntityType>
+			<EntityType Name="DummyType" sap:label="Cds view for empty dummy card in OVP app" sap:content-version="1">
+				<Key><PropertyRef Name="Storeid"/></Key><Property Name="Storeid" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Plant"/><Property Name="Num" Type="Edm.String" MaxLength="32" sap:label="Document ID"
+					sap:quickinfo="Internal Document ID, Representing the Doc. Type and Number"/></EntityType>
+			<EntityType Name="SAP__Currency" sap:content-version="1">
+				<Key><PropertyRef Name="CurrencyCode"/></Key><Property Name="CurrencyCode" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Currency" sap:semantics="currency-code"/><Property Name="ISOCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="ISO code"/><Property Name="Text" Type="Edm.String" Nullable="false" MaxLength="15" sap:label="Short text"/><Property Name="DecimalPlaces" Type="Edm.Byte" Nullable="false" sap:label="Decimals"/></EntityType>
+			<EntityType Name="SAP__UnitOfMeasure" sap:content-version="1">
+				<Key><PropertyRef Name="UnitCode"/></Key><Property Name="UnitCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Internal UoM" sap:semantics="unit-of-measure"/><Property Name="ISOCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="ISO code"/><Property Name="ExternalCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Commercial"/><Property Name="Text" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Measurement Unit Txt"/><Property Name="DecimalPlaces" Type="Edm.Int16" sap:label="Decimal Places"/></EntityType>
+			<EntityContainer Name="cds_zui_rtl_mystoreovp_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true"
+				sap:supported-formats="atom json xlsx"><EntitySet Name="AssignedStore" EntityType="cds_zui_rtl_mystoreovp.AssignedStoreType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="AdjToday" EntityType="cds_zui_rtl_mystoreovp.AdjTodayType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="CartonProcess" EntityType="cds_zui_rtl_mystoreovp.CartonProcessType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="TenDaysTransit" EntityType="cds_zui_rtl_mystoreovp.TenDaysTransitType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="DC_Carton" EntityType="cds_zui_rtl_mystoreovp.DC_CartonType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="TrsfExptd" EntityType="cds_zui_rtl_mystoreovp.TrsfExptdType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="DlvToday" EntityType="cds_zui_rtl_mystoreovp.DlvTodayType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="TodayCtn" EntityType="cds_zui_rtl_mystoreovp.TodayCtnType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="TodayCtn2" EntityType="cds_zui_rtl_mystoreovp.TodayCtn2Type" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="DC_Carton2" EntityType="cds_zui_rtl_mystoreovp.DC_Carton2Type" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="TransferIn" EntityType="cds_zui_rtl_mystoreovp.TransferInType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="TransferIn_1" EntityType="cds_zui_rtl_mystoreovp.TransferIn_1Type" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="Transfer" EntityType="cds_zui_rtl_mystoreovp.TransferType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="WeekDel" EntityType="cds_zui_rtl_mystoreovp.WeekDelType" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:content-version="1"/><EntitySet Name="VendTrsf" EntityType="cds_zui_rtl_mystoreovp.VendTrsfType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="CompletedToday" EntityType="cds_zui_rtl_mystoreovp.CompletedTodayType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="Dummy" EntityType="cds_zui_rtl_mystoreovp.DummyType" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:content-version="1"/><EntitySet Name="SAP__Currencies" EntityType="cds_zui_rtl_mystoreovp.SAP__Currency" sap:content-version="1"/><EntitySet Name="SAP__UnitsOfMeasure" EntityType="cds_zui_rtl_mystoreovp.SAP__UnitOfMeasure" sap:content-version="1"/></EntityContainer>
+			<Annotations Target="cds_zui_rtl_mystoreovp.cds_zui_rtl_mystoreovp_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.cds_zui_rtl_mystoreovp_Entities/AdjToday" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+								<PropertyPath>NumberOfHandlingUnits</PropertyPath>
+								<PropertyPath>ItemCount</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.cds_zui_rtl_mystoreovp_Entities/CartonProcess" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+								<PropertyPath>NumberOfHandlingUnits</PropertyPath>
+								<PropertyPath>ReceivedQty</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.cds_zui_rtl_mystoreovp_Entities/DC_Carton" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+								<PropertyPath>NumberOfHandlingUnits</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.cds_zui_rtl_mystoreovp_Entities/DC_Carton2" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+								<PropertyPath>NumberOfHandlingUnits</PropertyPath>
+								<PropertyPath>ItemCount</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.cds_zui_rtl_mystoreovp_Entities/DlvToday" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+								<PropertyPath>NumberOfHandlingUnits</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.cds_zui_rtl_mystoreovp_Entities/TenDaysTransit" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+								<PropertyPath>NumberOfHandlingUnits</PropertyPath>
+								<PropertyPath>ItemCount</PropertyPath>
+								<PropertyPath>ItemCount1</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.cds_zui_rtl_mystoreovp_Entities/TodayCtn" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+								<PropertyPath>Cartons</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.cds_zui_rtl_mystoreovp_Entities/TodayCtn2" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+								<PropertyPath>Cartons</PropertyPath>
+								<PropertyPath>ItemCount</PropertyPath>
+								<PropertyPath>ItemCount1</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.cds_zui_rtl_mystoreovp_Entities/Transfer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+								<PropertyPath>NumberOfHandlingUnits</PropertyPath>
+								<PropertyPath>ItemCount</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.cds_zui_rtl_mystoreovp_Entities/TransferIn" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+								<PropertyPath>NumberOfHandlingUnits</PropertyPath>
+								<PropertyPath>ItemCount</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.cds_zui_rtl_mystoreovp_Entities/TransferIn_1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+								<PropertyPath>NumberOfHandlingUnits</PropertyPath>
+								<PropertyPath>ItemCount</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.cds_zui_rtl_mystoreovp_Entities/TrsfExptd" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+								<PropertyPath>Cartons</PropertyPath>
+								<PropertyPath>ItemCount</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.cds_zui_rtl_mystoreovp_Entities/VendTrsf" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+								<PropertyPath>Cartons</PropertyPath>
+								<PropertyPath>ItemCount</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.cds_zui_rtl_mystoreovp_Entities/WeekDel" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+								<PropertyPath>NumberOfHandlingUnits</PropertyPath>
+								<PropertyPath>ItemCount</PropertyPath>
+								<PropertyPath>ItemCount1</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.AdjTodayType/CompletedType" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.SemanticObject" String="ZRTL_ADJ_TDYREP"/></Annotations><Annotations Target="cds_zui_rtl_mystoreovp.AdjTodayType/NumberOfHandlingUnits" xmlns="http://docs.oasis-open.org/odata/ns/edm"/><Annotations Target="cds_zui_rtl_mystoreovp.AdjTodayType/ItemCount" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+			<Annotations Target="cds_zui_rtl_mystoreovp.CartonProcessType/RecoveryStatusText" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.SemanticObject" String="ZRTL_CTN_PRCG"/></Annotations><Annotations Target="cds_zui_rtl_mystoreovp.CartonProcessType/NumberOfHandlingUnits" xmlns="http://docs.oasis-open.org/odata/ns/edm"/><Annotations Target="cds_zui_rtl_mystoreovp.CartonProcessType/ReceivedQty" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TenDaysTransitType/Supplier" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.SemanticObject" String="ZRTL_OVRDUE_REP"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TenDaysTransitType/CartonStatus" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.SemanticObject" String="ZRTL_OVRDUE_REP"/></Annotations><Annotations Target="cds_zui_rtl_mystoreovp.TenDaysTransitType/NumberOfHandlingUnits" xmlns="http://docs.oasis-open.org/odata/ns/edm"/><Annotations Target="cds_zui_rtl_mystoreovp.TenDaysTransitType/ItemCount" xmlns="http://docs.oasis-open.org/odata/ns/edm"/><Annotations Target="cds_zui_rtl_mystoreovp.TenDaysTransitType/ItemCount1" xmlns="http://docs.oasis-open.org/odata/ns/edm"/><Annotations Target="cds_zui_rtl_mystoreovp.DC_CartonType/NumberOfHandlingUnits" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TrsfExptdType/ProductTransferId" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.SemanticObject" String="ZRTL_TRS_EXPREP"/></Annotations><Annotations Target="cds_zui_rtl_mystoreovp.TrsfExptdType/Cartons" xmlns="http://docs.oasis-open.org/odata/ns/edm"/><Annotations Target="cds_zui_rtl_mystoreovp.TrsfExptdType/ItemCount" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+			<Annotations Target="cds_zui_rtl_mystoreovp.DlvTodayType/ReceivingStore" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.SemanticObject" String="Article"/></Annotations><Annotations Target="cds_zui_rtl_mystoreovp.DlvTodayType/NumberOfHandlingUnits" xmlns="http://docs.oasis-open.org/odata/ns/edm"/><Annotations Target="cds_zui_rtl_mystoreovp.TodayCtnType/Cartons" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TodayCtn2Type/CartonType" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.SemanticObject" String="ZRTL_MIMS_OREPS"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TodayCtn2Type/CartonStatus" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.SemanticObject" String="ZRTL_MIMS_OREPS"/></Annotations><Annotations Target="cds_zui_rtl_mystoreovp.TodayCtn2Type/Cartons" xmlns="http://docs.oasis-open.org/odata/ns/edm"/><Annotations Target="cds_zui_rtl_mystoreovp.TodayCtn2Type/ItemCount" xmlns="http://docs.oasis-open.org/odata/ns/edm"/><Annotations Target="cds_zui_rtl_mystoreovp.TodayCtn2Type/ItemCount1" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+			<Annotations Target="cds_zui_rtl_mystoreovp.DC_Carton2Type/CartonStatus" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.SemanticObject" String="ZRTL_DC_RECREP"/></Annotations><Annotations Target="cds_zui_rtl_mystoreovp.DC_Carton2Type/NumberOfHandlingUnits" xmlns="http://docs.oasis-open.org/odata/ns/edm"/><Annotations Target="cds_zui_rtl_mystoreovp.DC_Carton2Type/ItemCount" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TransferInType/HandlingUnitExternalID" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.SemanticObject" String="ZRTL_TRS_INREP1"/></Annotations><Annotations Target="cds_zui_rtl_mystoreovp.TransferInType/NumberOfHandlingUnits" xmlns="http://docs.oasis-open.org/odata/ns/edm"/><Annotations Target="cds_zui_rtl_mystoreovp.TransferInType/ItemCount" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TransferIn_1Type/Store" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.SemanticObject" String="ZREC_PROD_EXT2"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TransferIn_1Type/NumberOfHandlingUnits" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.SemanticObject" String="ZREC_PROD_EXT2"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TransferIn_1Type/DeliveryDocument" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.SemanticObject" String="ZREC_PROD_EXT2"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TransferIn_1Type/DeliveryDate" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.SemanticObject" String="ZREC_PROD_EXT2"/></Annotations><Annotations Target="cds_zui_rtl_mystoreovp.TransferIn_1Type/ItemCount" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TransferType/DelStore" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.SemanticObject" String="ZRTL_TRS_OUTREP"/></Annotations><Annotations Target="cds_zui_rtl_mystoreovp.TransferType/NumberOfHandlingUnits" xmlns="http://docs.oasis-open.org/odata/ns/edm"/><Annotations Target="cds_zui_rtl_mystoreovp.TransferType/ItemCount" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+			<Annotations Target="cds_zui_rtl_mystoreovp.WeekDelType/CartonID" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.SemanticObject" String="ZRTL_UPCMG_REP"/></Annotations><Annotations Target="cds_zui_rtl_mystoreovp.WeekDelType/NumberOfHandlingUnits" xmlns="http://docs.oasis-open.org/odata/ns/edm"/><Annotations Target="cds_zui_rtl_mystoreovp.WeekDelType/ItemCount" xmlns="http://docs.oasis-open.org/odata/ns/edm"/><Annotations Target="cds_zui_rtl_mystoreovp.WeekDelType/ItemCount1" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+			<Annotations Target="cds_zui_rtl_mystoreovp.VendTrsfType/InternalHUID" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.SemanticObject" String="ZRTL_VEND_TRSRP"/></Annotations><Annotations Target="cds_zui_rtl_mystoreovp.VendTrsfType/Cartons" xmlns="http://docs.oasis-open.org/odata/ns/edm"/><Annotations Target="cds_zui_rtl_mystoreovp.VendTrsfType/ItemCount" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+			<Annotations Target="cds_zui_rtl_mystoreovp.cds_zui_rtl_mystoreovp_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Org.OData.Capabilities.V1.BatchSupport">
+					<Record Type="Org.OData.Capabilities.V1.BatchSupportType"><PropertyValue Property="ReferencesAcrossChangeSetsSupported" Bool="true"/></Record>
+				</Annotation>
+				<Annotation Term="SAP__CodeList.CurrencyCodes">
+					<Record><PropertyValue Property="Url" String="./$metadata"/><PropertyValue Property="CollectionPath" String="SAP__Currencies"/></Record>
+				</Annotation>
+				<Annotation Term="SAP__CodeList.UnitsOfMeasure">
+					<Record><PropertyValue Property="Url" String="./$metadata"/><PropertyValue Property="CollectionPath" String="SAP__UnitsOfMeasure"/></Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.SAP__Currency/CurrencyCode" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="SAP__common.Text" Path="Text"/><Annotation Term="SAP__common.UnitSpecificScale" Path="DecimalPlaces"/><Annotation Term="SAP__CodeList.StandardCode" Path="ISOCode"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.SAP__UnitOfMeasure/UnitCode" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="SAP__common.Text" Path="Text"/><Annotation Term="SAP__common.UnitSpecificScale" Path="DecimalPlaces"/><Annotation Term="SAP__CodeList.StandardCode" Path="ISOCode"/><Annotation Term="SAP__CodeList.ExternalCode" Path="ExternalCode"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.SAP__UnitOfMeasure" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="SAP__core.AlternateKeys">
+					<Collection>
+						<Record>
+							<PropertyValue Property="Key">
+								<Collection>
+									<Record><PropertyValue Property="Name" Path="ExternalCode"/><PropertyValue Property="Alias" String="ExternalCode"/></Record>
+								</Collection>
+							</PropertyValue>
+						</Record>
+					</Collection>
+				</Annotation>
+			</Annotations><atom:link rel="self"
+				href="https://webidecp-e4xd895gah.dispatcher.us2.hana.ondemand.com/destinations/DG2-2021_client_200/sap/opu/odata/sap/ZUI_RTL_MYSTOREOVP/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version"
+				href="https://webidecp-e4xd895gah.dispatcher.us2.hana.ondemand.com/destinations/DG2-2021_client_200/sap/opu/odata/sap/ZUI_RTL_MYSTOREOVP/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

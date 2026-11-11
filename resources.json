@@ -1,0 +1,85 @@
+{
+    "resources": [
+        {
+            "name": "Component-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "i18n/i18n_zh_CN.properties",
+            "raw": "i18n/i18n.properties",
+            "locale": "_zh_CN"
+        },
+        {
+            "name": "i18n/i18n_zh_TW.properties",
+            "raw": "i18n/i18n.properties",
+            "locale": "_zh_TW"
+        },
+        {
+            "name": "i18n/i18n_ja.properties",
+            "raw": "i18n/i18n.properties",
+            "locale": "_ja"
+        },
+        {
+            "name": "i18n/i18n_en.properties",
+            "raw": "i18n/i18n.properties",
+            "locale": "_en"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "localService/mockserver.js"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "ext/Custom1.controller.js"
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "manifest-bundle.zip"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "ext/Custom1-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "localService/mockserver-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "i18n/i18n_ko.properties",
+            "raw": "i18n/i18n.properties",
+            "locale": "_ko"
+        },
+        {
+            "name": "../../sap-ui-version.json"
+        },
+        {
+            "name": "neo-app.json"
+        },
+        {
+            "name": "di.code-validation.core_issues.json"
+        },
+        {
+            "name": "localService/ZUI_RTL_MYSTOREOVP/metadata.xml"
+        },
+        {
+            "name": "localService/ZUI_RTL_MYSTOREOVP/ZUI_RTL_MYSTOREOVP_VAN.xml"
+        },
+        {
+            "name": "img/readme.txt"
+        },
+        {
+            "name": "ext/readme.txt"
+        }
+    ]
+}

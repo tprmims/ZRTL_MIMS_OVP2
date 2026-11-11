@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='FMSCLNT200')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='FMSCLNT200')/$value"><edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='FMSCLNT200')/$value"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='FMSCLNT200')/$value"><edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='FMSCLNT200')/$value"><edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='FMSCLNT200')/$value"><edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='FMSCLNT200')/$value"><edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="HTML5"/></edmx:Reference>
+	<edmx:Reference Uri="../../../sap/zui_rtl_mystoreovp/$metadata"><edmx:Include Namespace="ZUI_RTL_MYSTOREOVP" Alias="SAP"/></edmx:Reference>
+	<edmx:DataServices>
+		<Schema Namespace="zui_rtl_mystoreovp_van.v1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="cds_zui_rtl_mystoreovp.AssignedStoreType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="StoreName"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Store"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.AdjTodayType/CompletedType"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.AdjTodayType/ID"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.AdjTodayType/StockadjustmentstatusCode">
+				<Annotation Term="Common.Text" Path="StockadjustmentstatusText"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextOnly"/></Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.AdjTodayType">
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataFieldForIntentBasedNavigation"><PropertyValue Property="SemanticObject" String="ZRTL_ADJ_TDYREP"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="RequiresContext" Bool="true"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Status"/><PropertyValue Property="Value" Path="StockadjustmentstatusCode"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Trans"/><PropertyValue Property="Value" Path="NumberOfHandlingUnits"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Units"/><PropertyValue Property="Value" Path="ItemCount"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem" Qualifier="AdjNormal">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Status"/><PropertyValue Property="Value" Path="StockadjustmentstatusCode"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Trans"/><PropertyValue Property="Value" Path="NumberOfHandlingUnits"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem" Qualifier="AdjScrap">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Status"/><PropertyValue Property="Value" Path="StockadjustmentstatusCode"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Trans"/><PropertyValue Property="Value" Path="NumberOfHandlingUnits"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="AdjNormal">
+					<Record><PropertyValue Property="Text" String="Today: Adjustments"/>
+						<PropertyValue Property="SelectOptions">
+							<Collection>
+								<Record Type="UI.SelectOptionType"><PropertyValue Property="PropertyName" PropertyPath="UnitOfMeasure"/>
+									<PropertyValue Property="Ranges">
+										<Collection>
+											<Record Type="UI.SelectionRangeType"><PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/><PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ"/><PropertyValue Property="Low" String="EA"/></Record>
+										</Collection>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.CartonProcessType/RecoveryStatusText"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.CartonProcessType/ID"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.CartonProcessType/recovery_type">
+				<Annotation Term="Common.Text" Path="RecoveryStatusText"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextOnly"/></Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.CartonProcessType">
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataFieldForIntentBasedNavigation"><PropertyValue Property="SemanticObject" String="ZRTL_CTN_PRCG"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="RequiresContext" Bool="true"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Result"/><PropertyValue Property="Value" Path="recovery_type"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Cartons"/><PropertyValue Property="Value" Path="NumberOfHandlingUnits"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Units"/><PropertyValue Property="Value" Path="ReceivedQty"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="CartonProcess">
+					<Record><PropertyValue Property="Text" String="DC Carton Processing"/>
+						<PropertyValue Property="SelectOptions">
+							<Collection>
+								<Record Type="UI.SelectOptionType"><PropertyValue Property="PropertyName" PropertyPath="recovery_status"/>
+									<PropertyValue Property="Ranges">
+										<Collection>
+											<Record Type="UI.SelectionRangeType"><PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/E"/><PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ"/><PropertyValue Property="Low" String="06"/></Record>
+										</Collection>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TenDaysTransitType/NumberOfHandlingUnits"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TenDaysTransitType/SupplierName"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TenDaysTransitType/UnitOfMeasure"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TenDaysTransitType/Supplier"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TenDaysTransitType/CartonStatus"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TenDaysTransitType/ID"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TenDaysTransitType">
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataFieldForIntentBasedNavigation"><PropertyValue Property="SemanticObject" String="ZRTL_OVRDUE_REP"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="RequiresContext" Bool="true"/></Record>
+						<Record Type="UI.DataFieldForIntentBasedNavigation"><PropertyValue Property="SemanticObject" String="ZRTL_OVRDUE_REP"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="RequiresContext" Bool="true"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="From"/><PropertyValue Property="Value" Path="SupplierName"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Cartons"/><PropertyValue Property="Value" Path="NumberOfHandlingUnits"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Units"/><PropertyValue Property="Value" Path="ItemCount1"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="OvrdueDel">
+					<Record><PropertyValue Property="Text" String="Overdue Deliveries"/>
+						<PropertyValue Property="SelectOptions">
+							<Collection>
+								<Record Type="UI.SelectOptionType"><PropertyValue Property="PropertyName" PropertyPath="CartonStatus"/>
+									<PropertyValue Property="Ranges">
+										<Collection>
+											<Record Type="UI.SelectionRangeType"><PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/><PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ"/><PropertyValue Property="Low" String="O"/></Record>
+										</Collection>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.DC_CartonType/CartonID"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.DC_CartonType/StoreID"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.DC_CartonType/ID"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.DC_CartonType">
+				<Annotation Term="UI.Chart" Qualifier="handlingUnitDonut">
+					<Record Type="UI.ChartDefinitionType"><PropertyValue Property="ChartType" EnumMember="UI.ChartType/Donut"/>
+						<PropertyValue Property="Dimensions">
+							<Collection>
+								<PropertyPath>DeliveryStatus</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="DimensionAttributes">
+							<Collection>
+								<Record Type="UI.ChartDimensionAttributeType"><PropertyValue Property="Dimension" PropertyPath="DeliveryStatus"/><PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/></Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Measures">
+							<Collection>
+								<PropertyPath>NumberOfHandlingUnits</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="MeasureAttributes">
+							<Collection>
+								<Record Type="UI.ChartMeasureAttributeType"><PropertyValue Property="Measure" PropertyPath="NumberOfHandlingUnits"/><PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Cartons"/><PropertyValue Property="Value" Path="NumberOfHandlingUnits"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Carton Receiving Status"/><PropertyValue Property="Value" Path="DeliveryStatus"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TrsfExptdType/ProductTransferId"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TrsfExptdType/UnitOfMeasure"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TrsfExptdType/ID"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TrsfExptdType">
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataFieldForIntentBasedNavigation"><PropertyValue Property="SemanticObject" String="ZRTL_TRS_EXPREP"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="RequiresContext" Bool="true"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="From"/><PropertyValue Property="Value" Path="FromName"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Cartons"/><PropertyValue Property="Value" Path="Cartons"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Units"/><PropertyValue Property="Value" Path="ItemCount"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="ExpTransf">
+					<Record><PropertyValue Property="Text" String="Expected Transfers"/>
+						<PropertyValue Property="SelectOptions">
+							<Collection>
+								<Record Type="UI.SelectOptionType"><PropertyValue Property="PropertyName" PropertyPath="ProcessingState1"/>
+									<PropertyValue Property="Ranges">
+										<Collection>
+											<Record Type="UI.SelectionRangeType"><PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/><PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ"/><PropertyValue Property="Low" String="02"/></Record>
+										</Collection>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.DlvTodayType/ID"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.DlvTodayType">
+				<Annotation Term="UI.Chart" Qualifier="handlingUnitDonut">
+					<Record Type="UI.ChartDefinitionType"><PropertyValue Property="ChartType" EnumMember="UI.ChartType/Donut"/>
+						<PropertyValue Property="Dimensions">
+							<Collection>
+								<PropertyPath>HandlingUnitStatus</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="DimensionAttributes">
+							<Collection>
+								<Record Type="UI.ChartDimensionAttributeType"><PropertyValue Property="Dimension" PropertyPath="HandlingUnitStatus"/><PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/></Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Measures">
+							<Collection>
+								<PropertyPath>NumberOfHandlingUnits</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="MeasureAttributes">
+							<Collection>
+								<Record Type="UI.ChartMeasureAttributeType"><PropertyValue Property="Measure" PropertyPath="NumberOfHandlingUnits"/><PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="NumberOfHandlingUnits">
+					<Record><PropertyValue Property="Value" Path="NumberOfHandlingUnits"/><PropertyValue Property="Title" String=""/><PropertyValue Property="Visualization" EnumMember="UI.VisualizationType/Number"/></Record>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Delivery"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataFieldForAnnotation"><PropertyValue Property="Label" String="Number of Goods Receipts"/><PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#NumberOfHandlingUnits"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataFieldForIntentBasedNavigation"><PropertyValue Property="SemanticObject" String="Article"/><PropertyValue Property="Action" String="receive"/><PropertyValue Property="RequiresContext" Bool="true"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem" Qualifier="openCartons">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Carton ID"/><PropertyValue Property="Value" Path="CartonID"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Overdue Since"/><PropertyValue Property="Value" Path="Delivery"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataFieldForIntentBasedNavigation"><PropertyValue Property="SemanticObject" String="Article"/><PropertyValue Property="Action" String="receive"/><PropertyValue Property="RequiresContext" Bool="true"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.PresentationVariant" Qualifier="deliveriesDescOffsetDays">
+					<Record><PropertyValue Property="Text" String="Ascending by Expected Delivery Date"/>
+						<PropertyValue Property="SortOrder">
+							<Collection>
+								<Record Type="Common.SortOrderType"><PropertyValue Property="Property" PropertyPath="DeliveryDateOffsetInDays"/><PropertyValue Property="Descending" Bool="true"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.PresentationVariant" Qualifier="deliveriesDescOffsetDays">
+					<Record><PropertyValue Property="Text" String="Descending by Expected Delivery Date"/>
+						<PropertyValue Property="SortOrder">
+							<Collection>
+								<Record Type="Common.SortOrderType"><PropertyValue Property="Property" PropertyPath="DeliveryDateOffsetInDays"/><PropertyValue Property="Descending" Bool="false"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="openCartonsLastWeek">
+					<Record><PropertyValue Property="Text" String="Goods Receipts Overdue in Last Week"/><PropertyValue Property="FilterExpression" String="Structure ZCRTL_MYSTORE_TDYOVP does not have components STORERECEIVINGDOCGRSTATUS"/></Record>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="openCartonsLastTwoWeeks">
+					<Record><PropertyValue Property="Text" String="Goods Receipts Overdue in Last 2 Weeks"/><PropertyValue Property="FilterExpression" String="Structure ZCRTL_MYSTORE_TDYOVP does not have components STORERECEIVINGDOCGRSTATUS"/></Record>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="openCartonsOlderThanTwoWeeks">
+					<Record><PropertyValue Property="Text" String="Goods Receipts Overdue More than 2 Weeks"/><PropertyValue Property="FilterExpression" String="Structure ZCRTL_MYSTORE_TDYOVP does not have components STORERECEIVINGDOCGRSTATUS"/></Record>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="upcomingHUsUpTo5Days">
+					<Record><PropertyValue Property="Text" String="Goods Receipts Next 5 Days"/>
+						<PropertyValue Property="SelectOptions">
+							<Collection>
+								<Record Type="UI.SelectOptionType"><PropertyValue Property="PropertyName" PropertyPath="DeliveryDateOffsetInDays"/>
+									<PropertyValue Property="Ranges">
+										<Collection>
+											<Record Type="UI.SelectionRangeType"><PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/><PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/BT"/><PropertyValue Property="Low" Int="1"/><PropertyValue Property="High" Int="5"/></Record>
+										</Collection>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="handlingUnitsToday">
+					<Record><PropertyValue Property="Text" String="Goods Receipts Today"/>
+						<PropertyValue Property="SelectOptions">
+							<Collection>
+								<Record Type="UI.SelectOptionType"><PropertyValue Property="PropertyName" PropertyPath="DeliveryDateOffsetInDays"/>
+									<PropertyValue Property="Ranges">
+										<Collection>
+											<Record Type="UI.SelectionRangeType"><PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/><PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ"/><PropertyValue Property="Low" Int="0"/></Record>
+										</Collection>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TodayCtnType/UnitOfMeasure"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TodayCtnType/ID"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TodayCtnType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Carton Type"/><PropertyValue Property="Value" Path="CartonType"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="From"/><PropertyValue Property="Value" Path="FromName"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataFieldForAnnotation"><PropertyValue Property="Label" String="Cartons"/><PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#Cartons"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Units"/><PropertyValue Property="Value" Path="ItemCount"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TodayCtn2Type/FromName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TodayCtn2Type/UnitOfMeasure"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TodayCtn2Type/CartonType"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TodayCtn2Type/CartonStatus"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TodayCtn2Type/ID"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TodayCtn2Type/Supplier">
+				<Annotation Term="Common.Text" Path="FromName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextOnly"/></Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TodayCtn2Type">
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataFieldForIntentBasedNavigation"><PropertyValue Property="SemanticObject" String="ZRTL_MIMS_OREPS"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="RequiresContext" Bool="true"/></Record>
+						<Record Type="UI.DataFieldForIntentBasedNavigation"><PropertyValue Property="SemanticObject" String="ZRTL_MIMS_OREPS"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="RequiresContext" Bool="true"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="From"/><PropertyValue Property="Value" Path="Supplier"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Cartons"/><PropertyValue Property="Value" Path="Cartons"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Units"/><PropertyValue Property="Value" Path="ItemCount1"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Status"/><PropertyValue Property="Value" Path="CartonStatus"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="ExpDcdel">
+					<Record><PropertyValue Property="Text" String="Expected DC Deliveries"/>
+						<PropertyValue Property="SelectOptions">
+							<Collection>
+								<Record Type="UI.SelectOptionType"><PropertyValue Property="PropertyName" PropertyPath="CartonStatus"/>
+									<PropertyValue Property="Ranges">
+										<Collection>
+											<Record Type="UI.SelectionRangeType"><PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/><PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ"/><PropertyValue Property="Low" String="O"/></Record>
+										</Collection>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.DC_Carton2Type/CartonStatus"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.DC_Carton2Type/ID"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.DC_Carton2Type/Supplier">
+				<Annotation Term="Common.Text" Path="SupplierName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextOnly"/></Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.DC_Carton2Type">
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataFieldForIntentBasedNavigation"><PropertyValue Property="SemanticObject" String="ZRTL_DC_RECREP"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="RequiresContext" Bool="true"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="From"/><PropertyValue Property="Value" Path="Supplier"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Cartons"/><PropertyValue Property="Value" Path="NumberOfHandlingUnits"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Units"/><PropertyValue Property="Value" Path="ItemCount"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="DCReceipts">
+					<Record><PropertyValue Property="Text" String="DC Reciepts"/>
+						<PropertyValue Property="SelectOptions">
+							<Collection>
+								<Record Type="UI.SelectOptionType"><PropertyValue Property="PropertyName" PropertyPath="CartonStatus"/>
+									<PropertyValue Property="Ranges">
+										<Collection>
+											<Record Type="UI.SelectionRangeType"><PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/><PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ"/><PropertyValue Property="Low" String="1"/></Record>
+										</Collection>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TransferInType/InternalHUID"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TransferInType/UnitOfMeasure"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TransferInType/StoreReceivingDocGRStatus"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TransferInType/ID"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TransferInType/ProcessingState">
+				<Annotation Term="Common.Text" Path="ProcessingStateText"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextOnly"/></Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TransferInType">
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataFieldForIntentBasedNavigation"><PropertyValue Property="SemanticObject" String="ZRTL_TRS_INREP1"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="RequiresContext" Bool="true"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Status"/><PropertyValue Property="Value" Path="ProcessingState"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Trans"/><PropertyValue Property="Value" Path="NumberOfHandlingUnits"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Units"/><PropertyValue Property="Value" Path="ItemCount"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="TransferFilter">
+					<Record><PropertyValue Property="Text" String="Todays Transfer In"/>
+						<PropertyValue Property="SelectOptions">
+							<Collection>
+								<Record Type="UI.SelectOptionType"><PropertyValue Property="PropertyName" PropertyPath="DeliveryDateOffsetInDays"/>
+									<PropertyValue Property="Ranges">
+										<Collection>
+											<Record Type="UI.SelectionRangeType"><PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/><PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ"/><PropertyValue Property="Low" Int="0"/></Record>
+										</Collection>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TransferIn_1Type/UnitOfMeasure"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TransferIn_1Type/ID"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TransferIn_1Type">
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataFieldForIntentBasedNavigation"><PropertyValue Property="SemanticObject" String="ZREC_PROD_EXT2"/><PropertyValue Property="Action" String="receive"/><PropertyValue Property="RequiresContext" Bool="true"/></Record>
+						<Record Type="UI.DataFieldForIntentBasedNavigation"><PropertyValue Property="SemanticObject" String="ZREC_PROD_EXT2"/><PropertyValue Property="Action" String="receive"/><PropertyValue Property="RequiresContext" Bool="true"/></Record>
+						<Record Type="UI.DataFieldForIntentBasedNavigation"><PropertyValue Property="SemanticObject" String="ZREC_PROD_EXT2"/><PropertyValue Property="Action" String="receive"/><PropertyValue Property="RequiresContext" Bool="true"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem" Qualifier="openCartons">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Status"/><PropertyValue Property="Value" Path="CartonStatus"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Trans"/><PropertyValue Property="Value" Path="NumberOfHandlingUnits"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Units"/><PropertyValue Property="Value" Path="ItemCount"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="InternalHUID"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="HandlingUnitExternalID"/></Record>
+						<Record Type="UI.DataFieldForIntentBasedNavigation"><PropertyValue Property="SemanticObject" String="ZREC_PROD_EXT2"/><PropertyValue Property="Action" String="receive"/><PropertyValue Property="RequiresContext" Bool="true"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="DeliveryDocument"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="DeliveryDate"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TransferType/DelStore"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TransferType/UnitOfMeasure"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TransferType/ID"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.TransferType">
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataFieldForIntentBasedNavigation"><PropertyValue Property="SemanticObject" String="ZRTL_TRS_OUTREP"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="RequiresContext" Bool="true"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Status"/><PropertyValue Property="Value" Path="ProcessingState"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Trans"/><PropertyValue Property="Value" Path="NumberOfHandlingUnits"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Units"/><PropertyValue Property="Value" Path="ItemCount"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="TrsfOut">
+					<Record><PropertyValue Property="Text" String="Transfer Out"/>
+						<PropertyValue Property="SelectOptions">
+							<Collection>
+								<Record Type="UI.SelectOptionType"><PropertyValue Property="PropertyName" PropertyPath="UnitOfMeasure"/>
+									<PropertyValue Property="Ranges">
+										<Collection>
+											<Record Type="UI.SelectionRangeType"><PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/><PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ"/><PropertyValue Property="Low" String="EA"/></Record>
+										</Collection>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.WeekDelType/NumberOfHandlingUnits"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.WeekDelType/ItemCount1"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.WeekDelType/ExpectedDeliveryDate"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.WeekDelType/UnitOfMeasure"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.WeekDelType/ID"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.WeekDelType">
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataFieldForIntentBasedNavigation"><PropertyValue Property="SemanticObject" String="ZRTL_UPCMG_REP"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="RequiresContext" Bool="true"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="ETA"/><PropertyValue Property="Value" Path="ExpectedDeliveryDate"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Cartons"/><PropertyValue Property="Value" Path="NumberOfHandlingUnits"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Units"/><PropertyValue Property="Value" Path="ItemCount1"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="UpcommingDel">
+					<Record><PropertyValue Property="Text" String="Upcomming Deliveries"/>
+						<PropertyValue Property="SelectOptions">
+							<Collection>
+								<Record Type="UI.SelectOptionType"><PropertyValue Property="PropertyName" PropertyPath="CartonStatus"/>
+									<PropertyValue Property="Ranges">
+										<Collection>
+											<Record Type="UI.SelectionRangeType"><PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/><PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ"/><PropertyValue Property="Low" String="O"/></Record>
+										</Collection>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.VendTrsfType/InternalHUID"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.VendTrsfType/UnitOfMeasure"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.VendTrsfType/ID"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.VendTrsfType">
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataFieldForIntentBasedNavigation"><PropertyValue Property="SemanticObject" String="ZRTL_VEND_TRSRP"/><PropertyValue Property="Action" String="display"/><PropertyValue Property="RequiresContext" Bool="true"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="From"/><PropertyValue Property="Value" Path="FromName"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Cartons"/><PropertyValue Property="Value" Path="Cartons"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Units"/><PropertyValue Property="Value" Path="ItemCount"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="ExpVend">
+					<Record><PropertyValue Property="Text" String="Expected Vendor Deliveries"/>
+						<PropertyValue Property="SelectOptions">
+							<Collection>
+								<Record Type="UI.SelectOptionType"><PropertyValue Property="PropertyName" PropertyPath="IsTransferExpected"/>
+									<PropertyValue Property="Ranges">
+										<Collection>
+											<Record Type="UI.SelectionRangeType"><PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/><PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ"/><PropertyValue Property="Low" String="Y"/></Record>
+										</Collection>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.CompletedTodayType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Completed Today"/><PropertyValue Property="Value" Path="CompletedType"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Cartons"/><PropertyValue Property="Value" Path="NumberOfHandlingUnits"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.DummyType/Storeid"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_rtl_mystoreovp.DummyType/Num"><Annotation Term="UI.Hidden"/></Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
