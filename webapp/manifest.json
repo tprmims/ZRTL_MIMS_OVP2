@@ -576,7 +576,7 @@
 		}
 	},
 	"sap.platform.abap": {
-		"uri": "/sap/bc/ui5_ui5/sap/zrtl_mims_ovp2",
+		"uri": "/sap/bc/ui5_ui5/sap/zrtl_mims_ovp2/webapp",
 		"_version": "1.1.0"
 	}
 }
